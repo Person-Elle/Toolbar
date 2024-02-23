@@ -1,0 +1,20 @@
+# config/routes.yaml
+controllers:
+    resource:
+        path: ../src/Controller/
+        namespace: App\Controller
+    type: attribute
+
+app_home:
+    path: /
+    controller: App\Controller\HomeController::number
+
+app_contact:
+    path: /contact
+    controller: App\Controller\HomeController::contact
+
+app_form_connexion:
+    path: /connexion
+    controller: App\Controller\FormConnexionController::new
+    methods: ['GET', 'POST']
+    #index car c'est la meth utilisé ds FromConnexionController

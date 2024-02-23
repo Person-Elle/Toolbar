@@ -1,0 +1,26 @@
+{% extends '@WebProfiler/Profiler/layout.html.twig' %}
+
+{% block toolbar %}
+    {{ include('@WebProfiler/Profiler/toolbar_item.html.twig') }}
+{% endblock %}
+
+{% block panel %}
+    <h2>User Info</h2>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Method</th>
+                <th>Acceptable Content Types</th>
+                <th>Number of Users</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>//Symfony récup auto les données de $this->data et les transmet au template ss forme d'obj collector
+                                    //même si le mot "collector" n'est pas explicitement défini dans votre classe NbUserInfo
+                <td>{{ collector.getMethod() }}</td>
+                <td>{{ collector.getAcceptableContentTypes() | join(', ') }}</td>
+                <td>{{ collector.getCountUsers() }}</td>
+            </tr>
+        </tbody>
+    </table>
+{% endblock %}
